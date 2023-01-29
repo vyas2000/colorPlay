@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@200;300;400;500;600;700;800&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .blob-container {
+  background: #1c1c1c;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+body .blob-container #blob-overlay {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  filter: blur(100px);
+  z-index: 1;
+}
+body .blob-container #blob-overlay #blob {
+  position: absolute;
+  transition: 10s ease;
+}
+body .blob-container .info-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+body .blob-container .info-container .info {
+  color: #fff;
+  height: 600px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .blob-container .info-container .info .name {
+  font-size: 10rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+body .blob-container .info-container .info p {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+body .blob-container .info-container .info button {
+  font-size: 22px;
+  padding: 20px;
+  margin-top: 32px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  background: #FFF;
+  border: 1px solid #dfdfdf;
+  border-radius: 12px;
+  box-shadow: 0 0 32px #fff, inset 0 0 16px #eee;
+}
+body .blob-container .color-selector {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 80px;
+  width: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1000;
+}
+body .blob-container .color-selector .grad {
+  height: 20px;
+  width: 160px;
+  background-image: linear-gradient(to right, red, yellow, green, cyan, blue, magenta, red);
+}
+body .blob-container .color-selector .color {
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+body .blob-container .color-selector .red {
+  background-color: red;
+}
+body .blob-container .color-selector .red-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px red;
+}
+body .blob-container .color-selector .pink {
+  background-color: pink;
+}
+body .blob-container .color-selector .pink-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px pink;
+}
+body .blob-container .color-selector .purple {
+  background-color: purple;
+}
+body .blob-container .color-selector .purple-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px purple;
+}
+body .blob-container .color-selector .blue {
+  background-color: blue;
+}
+body .blob-container .color-selector .blue-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px blue;
+}
+body .blob-container .color-selector .cyan {
+  background-color: cyan;
+}
+body .blob-container .color-selector .cyan-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px cyan;
+}
+body .blob-container .color-selector .lime {
+  background-color: lime;
+}
+body .blob-container .color-selector .lime-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px lime;
+}
+body .blob-container .color-selector .green {
+  background-color: green;
+}
+body .blob-container .color-selector .green-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px green;
+}
+body .blob-container .color-selector .yellow {
+  background-color: yellow;
+}
+body .blob-container .color-selector .yellow-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px yellow;
+}
+body .blob-container .color-selector .orange {
+  background-color: orange;
+}
+body .blob-container .color-selector .orange-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px orange;
+}
+body .blob-container .color-selector .white {
+  background-color: white;
+}
+body .blob-container .color-selector .white-active {
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 4px white;
+}
+body .lol {
+  height: 100px;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  body .blob-container .info-container .info .name {
+    font-size: 72px;
+  }
+  body .blob-container .info-container .info {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

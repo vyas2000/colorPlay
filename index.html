@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="blob-container">
+      <div id="blob-overlay">
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+          <div id="blob"><span class="blob-inside-blob"></span></div>
+        </div>
+        <div class="info-container">
+          <div class="info">
+            <div class="name">Hello...!</div>
+            <!-- <p>Press the Button to Continue</p>
+            <button>Continue</button> -->
+          </div>
+        </div>
+        <div class="color-selector">
+          <!-- <div onclick="changeColor('red')" class="color red"></div>
+          <div onclick="changeColor('pink')" class="color pink"></div>
+          <div onclick="changeColor('purple')" class="color purple"></div>
+          <div onclick="changeColor('blue')" class="color blue"></div>
+          <div onclick="changeColor('cyan')" class="color cyan"></div>
+          <div onclick="changeColor('lime')" class="color lime"></div>
+          <div onclick="changeColor('green')" class="color green"></div>
+          <div onclick="changeColor('yellow')" class="color yellow"></div>
+          <div onclick="changeColor('orange')" class="color orange"></div>
+          <div onclick="changeColor('white')" class="color white"></div> -->
+          <div class="grad"></div>
+          <input type="range" onchange="changeColor(this.value)" min="1" max="360" value="180" class="slider" id="myRange">
+        </div>
+      </div>
+    <script type="text/javascript">
+
+        const blob = document.querySelectorAll('[id="blob"]')
+        const range = document.querySelectorAll('[id="myRange"]')
+        const colorBtn = document.querySelectorAll('[class="color"]')
+
+        let colorInt = 360;
+        let isWhite = false;
+
+        // const changeColor = (color) => {
+        //   switch (color) {
+        //     case "red":
+        //       isWhite = false
+        //     colorInt = 0;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "pink":
+        //       isWhite = false
+        //     colorInt = 320;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "purple":
+        //       isWhite = false
+        //     colorInt = 280;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "blue":
+        //       isWhite = false
+        //     colorInt = 245;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "cyan":
+        //       isWhite = false
+        //     colorInt = 200;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "lime":
+        //       isWhite = false
+        //     colorInt = 150;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "green":
+        //       isWhite = false
+        //     colorInt = 100;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "yellow":
+        //       isWhite = false
+        //     colorInt = 70;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "orange":
+        //       isWhite = false
+        //     colorInt = 30;
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,50)}%)`;
+        //       }
+        //       break;
+        //     case "white":
+        //     colorInt = 360;
+        //     isWhite = true
+        //     for(let i = 0; i < blob.length; i++) {
+        //         blob[i].style.background = `hsl(${colorInt}, 100%, 100%)`;
+        //       }
+        //       break;
+          
+        //     default:
+        //       break;
+        //   }
+        // }
+
+        const changeColor = (val) => {
+          colorInt = val
+          for(let i = 0; i < blob.length; i++) {
+            blob[i].style.background = `hsl(${colorInt}, 100%, ${getRandomInt(40,70)}%)`;
+          }
+        }
+
+        
+
+        const loopOverBlob = () => {
+
+          setInterval(() => {
+              for(let i = 0; i < blob.length; i++) {
+                blob[i].style.background = `hsl(${colorInt}, 100%, ${isWhite ? '100%' : getRandomInt(40,70)}%)`;
+                blob[i].style.height = `${getRandomInt(50,300)}px`;
+                blob[i].style.width = `${getRandomInt(50,300)}px`;
+                blob[i].style.top = `${getRandomInt(0,80)}%`;
+                blob[i].style.right = `${getRandomInt(0,80)}%`;
+                blob[i].style.bottom = `${getRandomInt(0,80)}%`;
+                blob[i].style.left = `${getRandomInt(0,80)}%`;
+                blob[i].style.borderTopLeftRadius = `${getRandomInt(20,100)}%`;
+                blob[i].style.borderTopRightRadius = `${getRandomInt(20,100)}%`;
+                blob[i].style.borderBottomLeftRadius = `${getRandomInt(20,100)}%`;
+                blob[i].style.borderBottomRightRadius = `${getRandomInt(20,100)}%`;
+              }
+
+            }, 5000);
+
+          }
+
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random()  * (max - min) + min);
+        }
+
+        loopOverBlob()
+
+    </script>
+  </body>
+</html>
