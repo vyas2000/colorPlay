@@ -90,6 +90,9 @@ body .blob-container .color-selector {
   gap: 6px;
   z-index: 1000;
 }
+body .blob-container .color-selector #myRange {
+  width: 160px;
+}
 body .blob-container .color-selector .grad {
   height: 20px;
   width: 160px;
